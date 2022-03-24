@@ -1,8 +1,8 @@
 #include "Account.h"
+#include <numeric>
 
 Account::Account(Money money){
-    Money instance;
-    balance = instance;
+    balance = money;
 }
 
 void Account::makeDeposit(Money m_deposit){
@@ -18,41 +18,22 @@ void Account::makeWithdrawals(Money m_withdrawal){
 }
 
 std::ostream& operator <<(std::ostream& os, const Account& acc){
-    std::string info;
-    std::vector<std::string> infoV;
-
+    os << "Account Details" << std::endl;
+    os << "--------------------------" << std::endl;
+    os << "Current Balance: " << acc.balance << std::endl;
+    os << "--------------------------" << std::endl;
+    os << "Number of Deposits: " << acc.deposits.size() << std::endl;
+    os << "--------------------------" << std::endl;
     for(int i = 0; i < acc.deposits.size(); i++){
-        std::stringstream ssNumDeposits;
-        ssNumDeposits << i+1;
-        std::string strNumDeposits;
-        ssNumDeposits >> strNumDeposits;
-
-        std::stringstream ssDeposits;
-        ssDeposits << acc.deposits.at(i);
-        std::string strDeposits;
-        ssDeposits >> strDeposits;
-
-        std::string info =  "(" + strNumDeposits + ")" + strDeposits;
-        infoV.push_back(info);
+        os << "(" << i+1 << ") ";
+        os << acc.deposits.at(i) << std::endl;
     }
-
-    for(int i = 0; i < acc.deposits.size(); i++){
-        std::string info = infoV.at(i);
+    os << "--------------------------" << std::endl;
+    os << "Number of Withdrawals: " << acc.withdrawals.size() << std::endl;
+    os << "--------------------------" << std::endl;
+    for(int i = 0; i < acc.withdrawals.size(); i++){
+        os << "(" << i+1 << ") ";
+        os << acc.withdrawals.at(i) << std::endl;
     }
-
-    if(!acc.upToDate){
-
-    }
-
-    os << "Account Details";
-    os << "\n--------------------------";
-    os << "\nCurrent Balance:" << acc.balance;
-    os << "\n--------------------------";
-    os << "\nNumber of Deposits: " << acc.deposits.size();
-    os << "\n--------------------------\n";
-    os << info;
-    os << "\n--------------------------";
-    os << "\nNumber of Withdrawals: " << acc.withdrawals.size();
-    os << "\n--------------------------\n";
     return os;
 }
