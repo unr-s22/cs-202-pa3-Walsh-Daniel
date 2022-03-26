@@ -1,6 +1,6 @@
 //
 // Created by Dan on 3/21/2022.
-// Contributed by Zak Kholmatov
+// Contributed by Zak Kholmatov.
 //
 #include <iostream>
 #include "Account.h"
