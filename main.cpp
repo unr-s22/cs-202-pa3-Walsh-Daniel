@@ -1,6 +1,6 @@
 //
-// Created by: Dan on 3/21/2022.
-// Contributor: Zak
+// Created by Dan on 3/21/2022.
+// Contributed by Zak Kholmatov
 //
 #include <iostream>
 #include "Account.h"
@@ -19,7 +19,7 @@ int main()
     acc.makeWithdrawals(Money(201, 34));
     //checking balance after withdrawals
     std::cout << acc << std::endl;
-
+    
     //checking if relational operators are working
     //<= and >= would work the same way since the code is almost identical
     Money m(120,10);
@@ -33,7 +33,7 @@ int main()
     else if(m == n){
         std::cout << "they're the same" << std::endl;
     }
-
+    
     //checking if math operators are working
     Money z;
     z = m + n;
@@ -44,3 +44,4 @@ int main()
 
     return 0;
 }
+

@@ -1,6 +1,6 @@
 //
 // Created by Dan on 3/10/2022.
-// Contributor: Zak Kholmatov
+//
 
 #ifndef CS_202_PA3_WALSH_DANIEL_MONEY_H
 #define CS_202_PA3_WALSH_DANIEL_MONEY_H
@@ -14,11 +14,11 @@ class Money
         int cents;
 
     public:
-        //default constructor
+        //defualt constructor
 
         Money();
 
-        //parameterized constructor
+        //paramterized constructor
         Money(int _dollars, int _cents);
 
         int getDollars();
