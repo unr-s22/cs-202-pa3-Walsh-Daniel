@@ -1,6 +1,6 @@
 //
 // Created by Dan on 3/10/2022.
-// Contributed by Zak Kholmatov
+// Contributed by Zak Kholmatov. 
 //
 
 #include "Money.h"
